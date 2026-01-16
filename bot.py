@@ -39,7 +39,9 @@ async def start(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text=["📢 Taklif", "⚠️ E’tiroz"], state="*")
 async def choose_category(message: types.Message, state: FSMContext):
+    await state.finish()  # eski holatni tozalaydi
     await state.update_data(category=message.text)
+
     await message.answer(
         "Raqam bilan yuborasizmi yoki anonim?",
         reply_markup=identity_kb
