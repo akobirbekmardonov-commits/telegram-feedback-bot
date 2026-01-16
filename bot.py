@@ -37,7 +37,7 @@ async def start(message: types.Message, state: FSMContext):
     )
     await Form.category.set()
 
-@dp.message_handler(text=["📢 Taklif", "⚠️ E’tiroz"], state=Form.category)
+@dp.message_handler(text=["📢 Taklif", "⚠️ E’tiroz"], state="*")
 async def choose_category(message: types.Message, state: FSMContext):
     await state.update_data(category=message.text)
     await message.answer(
