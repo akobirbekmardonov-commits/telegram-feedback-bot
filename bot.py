@@ -32,7 +32,7 @@ contact_kb.add(types.KeyboardButton("📲 Raqamni yuborish", request_contact=Tru
 async def start(message: types.Message, state: FSMContext):
     await state.finish()
     await message.answer(
-        "Assalomu alaykum!\nTaklif yoki e’tirozingizni tanlang:",
+        "Assalomu alaykum! Shifodor Corp rivojiga hissa qo'shayotganingizdan xursandmiz!\nTaklif yoki e’tirozingizni tanlang:",
         reply_markup=category_kb
     )
     await Form.category.set()
@@ -92,7 +92,7 @@ async def receive_text(message: types.Message, state: FSMContext):
     await sent.reply(f"USER_ID:{message.from_user.id}")
 
     await message.answer(
-        "Rahmat! Murojaatingiz qabul qilindi ✅\n/start buyrug‘i bilan yana yuborishingiz mumkin",
+        "Rahmat! Murojaatingiz qabul qilindi ✅Rahbariyat buni 24 soat ichida ko'rib chiqadi\n/start buyrug‘i bilan yana yuborishingiz mumkin",
         reply_markup=types.ReplyKeyboardRemove()
     )
 
